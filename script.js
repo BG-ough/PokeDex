@@ -4,9 +4,7 @@ let allPokemon = [];
 let currentPokemon;
 let selectedPokemon = 40;
 let start = 0;
-// let findedPokemon = [];
-// let searchedPokemon = [];
-// let filteredPokemon = false;
+
 
 const colors = [
 	{"type": "normal", "background": "linear-gradient(to bottom, #C6C6A7, #D5D5B8, #E5E5CC, #F4F4E1, #FFFFFF)"},
@@ -32,9 +30,6 @@ async function init() {
   await loadPokemon();
   loadAllPokemon();
 }
-
-
-// init();
 
 
 async function loadPokemon() {
@@ -138,10 +133,18 @@ function closeImg() {
 }
 
 function nachLinks(i) {
+  if (i === 0) {
+    i = selectedPokemon;
+  }
   openImage(i - 1);
 }
 
 function nachRechts(i) {
+  console.log(i)
+  console.log(selectedPokemon)
+  if (i === selectedPokemon - 1) {
+    i = -1;
+  }
   openImage(i + 1);
 }
 
@@ -252,6 +255,7 @@ function displaySearchResults(results) {
   
   for (let i = 0; i < results.length; i++) {
     const pokemonData = results[i];
+    const pokemonID = allPokemon.findIndex(pokemon => pokemon.id === pokemonData.id);
     const pokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
     const pokemonNumber = pokemonData.id;
     const pokemonType = pokemonData.types[0].type.name;
@@ -260,7 +264,7 @@ function displaySearchResults(results) {
     const pokemonCard = document.createElement("div");
     pokemonCard.classList.add("pokemon-mini-card");
     pokemonCard.innerHTML = `
-      <div id="colors${i}" onclick="pokemonOnclick(${i})">
+      <div id="colors${i}" onclick="pokemonOnclick(${pokemonID})">
         <div>
           <h5>${pokemonName}</h5>
         </div>
@@ -285,27 +289,5 @@ function displaySearchResults(results) {
   }
 }
 
-// meine Funktion geht nicht
-// function searchPokemon() {
-//   const inputPokemon = document.getElementById('search').value.toLowerCase();
-//   document.getElementById('initArea').innerHTML = '';
 
-//   if (inputPokemon.length >= 3) {
-//       findedPokemon = [];
-//       filteredPokemon = true; // Deklaration der Variable
-//       for (let i = 0; i < allPokemon.length; i++) {
-//           const pokeName = allPokemon[i].name.toLowerCase();
-
-//           if (pokeName.includes(inputPokemon)) {
-//               renderPokemonInfo(i);
-//               findedPokemon.push(i);
-//           }
-//       }
-//   } else {
-//       filteredPokemon = true; // Deklaration der Variable
-//       for (let j = 0; j < pokemon.length; j++) {
-//           renderPokemonInfo(j);
-//       }
-//   }
-// }
 

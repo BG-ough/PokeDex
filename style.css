@@ -1,7 +1,10 @@
 body {
   margin: 0;
   font-family: "Comfortaa";
+  max-width: 1440px;
+  margin: 0 auto;
 }
+
 .card {
   margin: 10px;
 }
@@ -21,16 +24,19 @@ body {
   box-sizing: border-box;
   overflow: auto;
 }
+
 #pokedex span {
   margin-left: 5px;
   margin-top: 65px;
   color: rgb(55, 55, 55);
   font-size: smaller;
 }
+
 .pokemon-mini-card img {
     background-size: cover;
   height: 90px;
 }
+
 .pokemon-mini-card:hover img {
   transition: all 1s ;
   font-weight: bolder;
@@ -38,12 +44,14 @@ body {
   transform: translateX(-10px);
 
 }
+
 .pokemon-mini-card:hover h5 {
   font-weight: bold;
   font-style: italic;
   transition: all 15ms ease-in-out;
 
 }
+
 .card-body{
   padding: 0;
 }
@@ -53,6 +61,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 #nextPokemon{
   margin: 20px 0 20px 0;
   height: 45px;
@@ -61,11 +70,13 @@ body {
   border: none;
   font-size: 17px;
 }
+
 #nextPokemon:hover{
   background-color: #e04848;
   transition: all 0.5s ease-in-out;
   color: antiquewhite;
 }
+
 #pokemon-container-center{
     position: apsolut;
     top: 0;
@@ -92,6 +103,7 @@ body {
   flex-direction: column;
   gap: 15px;
 }
+
 .pokemon-mini-card:hover{
   background: radial-gradient (
         circle at 100% 100%,
@@ -119,20 +131,24 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .h5, h5{
   margin-top: .5rem;
   margin-bottom: 0rem;
   }
+
 .class-title h5{
   padding-top: 45px;
   font-size: 45px;
 }
+
 .nav-logo {
   text-align: center;
   display: flex;
   gap: 5px;
   margin-right: 50px;
 }
+
 .card-text-name {
   text-align: center;
   color: #000000ac;
@@ -148,47 +164,57 @@ body {
   font-weight: bolder;
   margin-top: -10px;
 }
+
 .d-none {
   display: none;
 }
+
 #initArea{
     display: flex;
     justify-content: center;
     
 }
+
 .info-card-img{
   display: flex;
   justify-content: center;
-
 }
+
 .card-img-top {
   width: 50%;
 }
+
 .card-body-chart{
   display: flex;
   justify-content: center;
 }
-#myChart{
-  box-sizing: border-box;
 
+#myChart{
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
 }
+
 #pokemon-container-center{
     width: 100%
 }
+
 .card-body-footer{
     display: flex;
     justify-content: space-around;
     font-size: 30px;
-    
   }
+
   .card-text-name{
     margin-top: -40px;
   }
+
   .card-link{
   text-decoration: none;
   color: #000000;
 
 }
+
 footer span{
   font-size: smaller;
 }
